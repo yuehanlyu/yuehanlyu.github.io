@@ -4,7 +4,7 @@ title:  "在神经网络中计算梯度的方法!"
 date:   2019-04-11 13:57:45 +0800
 categories: yuehan notes
 ---
-这里应该是用 `markdown` ，让我试一下...
+这里应该是用 `markdown` ，比如
 
 {% highlight python %}
 def print_hi(name)
@@ -14,6 +14,6 @@ print_hi('John')
 #=> prints 'Hi, John' to STDOUT.
 {% endhighlight %}
 
-这里有[Jekyll docs][jekyll-docs] 更多的使用jekllrb写markdown的方法
+主要参考的是Andrew Ng的[Andrew dl][Andrew-dl] 课程相关的章节
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
+[Andrew-dl]: https://www.coursera.org/learn/neural-networks-deep-learning/home/week/3

@@ -16,7 +16,7 @@
 title: John_date_river_side
 email: steflyu@163.com
 description: >- # this means to ignore newlines until "baseurl:"
-  约翰的主页，包括笔记和一些项目。
+  Hi, I'm Yuehan. I am putting some learning notes and project presentations here. Thanks for visiting! Drop me a message to my email address.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: yuehanlyu

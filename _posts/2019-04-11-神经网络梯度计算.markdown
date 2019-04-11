@@ -1,19 +1,13 @@
 ---
 layout: post
-title:  "在神经网络中计算梯度的方法!"
+title:  "在神经网络中计算梯度的方法"
 date:   2019-04-11 13:57:45 +0800
 categories: yuehan notes
 ---
-这里应该是用 `markdown` ，比如
+How neural network update weights of its hidden units? This blog mainly refers from Andrew Ng's course [Deep learning][Andrew-dl].
+# Derivative computing
 
-{% highlight python %}
-def print_hi(name)
-  puts "Hi, #{name}"
 
-print_hi('John')
-#=> prints 'Hi, John' to STDOUT.
-{% endhighlight %}
 
-主要参考的是Andrew Ng的[Andrew dl][Andrew-dl] 课程相关的章节
 
 [Andrew-dl]: https://www.coursera.org/learn/neural-networks-deep-learning/home/week/3

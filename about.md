@@ -4,6 +4,7 @@ title: About
 permalink: /about/
 ---
 
-This is a personal website of Yuehan. It is static, so you, a visitor, cannot interact with me. Shame on me.
+This is a personal website of Yuehan.
+这里会放约翰的一些笔记，和项目展示。
 
 [jekyll-organization]: https://github.com/jekyll

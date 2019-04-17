@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Compute gradients in neural network."
-date:   2019-04-11 13:57:45 +0800
+date:   2019-01-03 13:57:45 +0800
 categories: yuehan notes
 ---
 How neural network update weights of its hidden units? This blog mainly refers from Andrew Ng's course [Deep learning][Andrew-dl].

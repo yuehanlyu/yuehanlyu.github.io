@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Compare l1 and l2 regularizaion."
-date:   2019-04-12 20:50:45 +0800
+date:   2019-02-10 20:50:45 +0800
 categories: yuehan notes
 ---
 

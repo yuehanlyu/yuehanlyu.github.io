@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Activation Functions: why we need it."
-date:   2019-04-12 00:01:45 +0800
+date:   2019-01-21 00:01:45 +0800
 categories: yuehan notes
 ---
 

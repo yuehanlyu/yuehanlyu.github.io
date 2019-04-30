@@ -9,13 +9,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="How neural network update weights of its hidden units? This blog mainly refers from Andrew Ng’s course Deep learning. Do the prediction Suppose we are constructing the simplest neural network that only has 1 layer of hidden neurons. It can be regarded as a logistic regression model. For one sample, given weights, we first compute the predicted $\bar{y}$, and the logloss $L$ caused by error between it and ground true:" />
 <meta property="og:description" content="How neural network update weights of its hidden units? This blog mainly refers from Andrew Ng’s course Deep learning. Do the prediction Suppose we are constructing the simplest neural network that only has 1 layer of hidden neurons. It can be regarded as a logistic regression model. For one sample, given weights, we first compute the predicted $\bar{y}$, and the logloss $L$ caused by error between it and ground true:" />
-<link rel="canonical" href="http://localhost:4000/yuehan/notes/2019/04/11/Gradients-in-neural-network.html" />
-<meta property="og:url" content="http://localhost:4000/yuehan/notes/2019/04/11/Gradients-in-neural-network.html" />
+<link rel="canonical" href="http://localhost:4000/yuehan/notes/2019/01/03/Gradients-in-neural-network.html" />
+<meta property="og:url" content="http://localhost:4000/yuehan/notes/2019/01/03/Gradients-in-neural-network.html" />
 <meta property="og:site_name" content="John_date_river_side" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-04-11T13:57:45+08:00" />
+<meta property="article:published_time" content="2019-01-03T13:57:45+08:00" />
 <script type="application/ld+json">
-{"description":"How neural network update weights of its hidden units? This blog mainly refers from Andrew Ng’s course Deep learning. Do the prediction Suppose we are constructing the simplest neural network that only has 1 layer of hidden neurons. It can be regarded as a logistic regression model. For one sample, given weights, we first compute the predicted $\\bar{y}$, and the logloss $L$ caused by error between it and ground true:","@type":"BlogPosting","url":"http://localhost:4000/yuehan/notes/2019/04/11/Gradients-in-neural-network.html","headline":"Compute gradients in neural network.","dateModified":"2019-04-11T13:57:45+08:00","datePublished":"2019-04-11T13:57:45+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/yuehan/notes/2019/04/11/Gradients-in-neural-network.html"},"@context":"https://schema.org"}</script>
+{"description":"How neural network update weights of its hidden units? This blog mainly refers from Andrew Ng’s course Deep learning. Do the prediction Suppose we are constructing the simplest neural network that only has 1 layer of hidden neurons. It can be regarded as a logistic regression model. For one sample, given weights, we first compute the predicted $\\bar{y}$, and the logloss $L$ caused by error between it and ground true:","@type":"BlogPosting","url":"http://localhost:4000/yuehan/notes/2019/01/03/Gradients-in-neural-network.html","headline":"Compute gradients in neural network.","dateModified":"2019-01-03T13:57:45+08:00","datePublished":"2019-01-03T13:57:45+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/yuehan/notes/2019/01/03/Gradients-in-neural-network.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="John_date_river_side" /><script type="text/x-mathjax-config"> 
    		MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); 
@@ -52,7 +52,7 @@
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">Compute gradients in neural network.</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2019-04-11T13:57:45+08:00" itemprop="datePublished">Apr 11, 2019
+      <time class="dt-published" datetime="2019-01-03T13:57:45+08:00" itemprop="datePublished">Jan 3, 2019
       </time></p>
   </header>
 
@@ -85,7 +85,7 @@ According to chain rule,</p>
 <p>Back propagation leads to two problems regarding gradients. They are <code class="highlighter-rouge">gradient vanishing</code> and <code class="highlighter-rouge">gradient explosion</code>. We will talk about using different activation funciton to solve those two problems in another blog.</p>
 
 
-  </div><a class="u-url" href="/yuehan/notes/2019/04/11/Gradients-in-neural-network.html" hidden></a>
+  </div><a class="u-url" href="/yuehan/notes/2019/01/03/Gradients-in-neural-network.html" hidden></a>
 </article>
 
       </div>

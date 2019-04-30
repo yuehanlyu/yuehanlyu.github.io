@@ -3,19 +3,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
-<title>Activation Functions: why we need it. | John_date_river_side</title>
+<title>Compare l1 and l2 regularizaion. | John_date_river_side</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Activation Functions: why we need it." />
+<meta property="og:title" content="Compare l1 and l2 regularizaion." />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Why we need activation functions: if we only have linear neurons, then the network is no more than a linear regression function." />
-<meta property="og:description" content="Why we need activation functions: if we only have linear neurons, then the network is no more than a linear regression function." />
-<link rel="canonical" href="http://localhost:4000/yuehan/notes/2019/04/12/Activation-functions.html" />
-<meta property="og:url" content="http://localhost:4000/yuehan/notes/2019/04/12/Activation-functions.html" />
+<meta name="description" content="In this artical, we explain why l1 regularization causes sparse parameters, but l2 regularization can not. Let’s suppose the cost functions of weights in terms of l1 and l2 regularization are" />
+<meta property="og:description" content="In this artical, we explain why l1 regularization causes sparse parameters, but l2 regularization can not. Let’s suppose the cost functions of weights in terms of l1 and l2 regularization are" />
+<link rel="canonical" href="http://localhost:4000/yuehan/notes/2019/02/10/Compare-l1-and-l2-regularization.html" />
+<meta property="og:url" content="http://localhost:4000/yuehan/notes/2019/02/10/Compare-l1-and-l2-regularization.html" />
 <meta property="og:site_name" content="John_date_river_side" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-04-12T00:01:45+08:00" />
+<meta property="article:published_time" content="2019-02-10T20:50:45+08:00" />
 <script type="application/ld+json">
-{"description":"Why we need activation functions: if we only have linear neurons, then the network is no more than a linear regression function.","@type":"BlogPosting","url":"http://localhost:4000/yuehan/notes/2019/04/12/Activation-functions.html","headline":"Activation Functions: why we need it.","dateModified":"2019-04-12T00:01:45+08:00","datePublished":"2019-04-12T00:01:45+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/yuehan/notes/2019/04/12/Activation-functions.html"},"@context":"https://schema.org"}</script>
+{"description":"In this artical, we explain why l1 regularization causes sparse parameters, but l2 regularization can not. Let’s suppose the cost functions of weights in terms of l1 and l2 regularization are","@type":"BlogPosting","url":"http://localhost:4000/yuehan/notes/2019/02/10/Compare-l1-and-l2-regularization.html","headline":"Compare l1 and l2 regularizaion.","dateModified":"2019-02-10T20:50:45+08:00","datePublished":"2019-02-10T20:50:45+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/yuehan/notes/2019/02/10/Compare-l1-and-l2-regularization.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="John_date_river_side" /><script type="text/x-mathjax-config"> 
    		MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); 
@@ -50,20 +50,33 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Activation Functions: why we need it.</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Compare l1 and l2 regularizaion.</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2019-04-12T00:01:45+08:00" itemprop="datePublished">Apr 12, 2019
+      <time class="dt-published" datetime="2019-02-10T20:50:45+08:00" itemprop="datePublished">Feb 10, 2019
       </time></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Why we need activation functions: if we only have linear neurons, then the network is no more than a linear regression function.</p>
+    <p>In this artical, we explain why l1 regularization causes sparse parameters, but l2 regularization can not.
+Let’s suppose the cost functions of weights in terms of l1 and l2 regularization are</p>
 
-<p>Therefore, we need activition.</p>
+<script type="math/tex; mode=display">L_1(w) = J(w)+\sum_{i=1} |w_i|</script>
 
-<p>Activation can also solve gradient vanishing and explosion.</p>
+<p>and</p>
 
-  </div><a class="u-url" href="/yuehan/notes/2019/04/12/Activation-functions.html" hidden></a>
+<script type="math/tex; mode=display">L_2(w) = J(w)+\sum_{i=1} (w_i)^2.</script>
+
+<p>We apply gradient descent to update $w_i$, which means</p>
+
+<p><script type="math/tex">w_i =  w_i-\alpha\cdot\frac{\delta L_1}{\delta w_i}\\
+	= w_i-\frac{\delta J(w)}{\delta w}-sgn(w_i)</script> for l1 reg,</p>
+
+<p><script type="math/tex">w_i =  w_i-\alpha\cdot\frac{\delta L_1}{\delta w_i}\\
+	= w_i-\frac{\delta J(w)}{\delta w}-2(w_i)</script>for l2 reg.</p>
+
+<p>Note that sgn represents signal function. Above shows that when $w\in(1,+\infty)$, $w_i$ of l2 decreases faster than that og l1 reg. When $w$ becomes less than 1 and approximates 0, $w_i$ for l2 decreases extremely slowly, while $w_i$ for l1 maintains a constant decreasing velocity. Thus if we keep training under l1 reg, many of $w$ will become zero ultimately.</p>
+
+  </div><a class="u-url" href="/yuehan/notes/2019/02/10/Compare-l1-and-l2-regularization.html" hidden></a>
 </article>
 
       </div>

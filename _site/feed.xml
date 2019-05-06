@@ -1,4 +1,62 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-04-30T18:03:34+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">John_date_river_side</title><subtitle>Hi, I'm Yuehan. I am putting some learning notes and project presentations here. Thanks for visiting! Drop me a message to my email address.</subtitle><entry><title type="html">Dive into graph embedding applications</title><link href="http://localhost:4000/yuehan/notes/2019/04/17/Dive-into-graph-embedding-applications.html" rel="alternate" type="text/html" title="Dive into graph embedding applications" /><published>2019-04-17T08:50:45+08:00</published><updated>2019-04-17T08:50:45+08:00</updated><id>http://localhost:4000/yuehan/notes/2019/04/17/Dive-into-graph-embedding-applications</id><content type="html" xml:base="http://localhost:4000/yuehan/notes/2019/04/17/Dive-into-graph-embedding-applications.html">&lt;ol&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-06T23:53:15+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">John_date_river_side</title><subtitle>Hi, I'm Yuehan. I am putting some learning notes and project presentations here. Thanks for visiting! Drop me a message to my email address.</subtitle><entry><title type="html">Optimization functions</title><link href="http://localhost:4000/yuehan/notes/2019/05/06/Optimization-functions.html" rel="alternate" type="text/html" title="Optimization functions" /><published>2019-05-06T08:50:45+08:00</published><updated>2019-05-06T08:50:45+08:00</updated><id>http://localhost:4000/yuehan/notes/2019/05/06/Optimization-functions</id><content type="html" xml:base="http://localhost:4000/yuehan/notes/2019/05/06/Optimization-functions.html">&lt;p&gt;Let’s start from the most often seen ones.
+Most authors say that if you don’t know which one to use, then use Adagrad.&lt;/p&gt;
+
+&lt;h2 id=&quot;gradient-descent&quot;&gt;Gradient descent&lt;/h2&gt;
+
+&lt;p&gt;The updating function is
+&lt;script type=&quot;math/tex&quot;&gt;\theta_{t+1,i}=\theta_{t,i}-\eta\cdot g_{t,i}&lt;/script&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt;S-GD&lt;/th&gt;
+      &lt;th&gt;mini batch-GD&lt;/th&gt;
+      &lt;th&gt;batch-GD&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;speed&lt;/td&gt;
+      &lt;td&gt;fast&lt;/td&gt;
+      &lt;td&gt;moderate&lt;/td&gt;
+      &lt;td&gt;slow&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;convergence of loss&lt;/td&gt;
+      &lt;td&gt;easy to stuck in local-minimum&lt;/td&gt;
+      &lt;td&gt;moderate&lt;/td&gt;
+      &lt;td&gt;overall minimum&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Features are updated at the same rate.
+But we are eager to update more for rarely accuring feature.&lt;/p&gt;
+
+&lt;h2 id=&quot;momentum&quot;&gt;Momentum&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;accelerate SGD in the relevant direction&lt;/li&gt;
+  &lt;li&gt;dampen oscillations&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;v_t=\mu v_{t-1}+\eta \cdot g_{t,i}\\
+\theta = \theta-v_t&lt;/script&gt;
+
+&lt;p&gt;$v$ represents the descent direction of last time.&lt;/p&gt;
+
+&lt;h2 id=&quot;adagrad-adaptive-gradient-descent&quot;&gt;(Adagrad) Adaptive gradient descent&lt;/h2&gt;
+
+&lt;p&gt;Adopt the learning rate to the parameters.
+Suitable for sparse data.(Thus parameters are updated in different rate.)&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta_{t+1,i}=\theta_{t,i} - \frac{\eta}{\sqrt{G_{t,ii}+\epsilon}}\cdot g_{t,i}&lt;/script&gt;
+
+&lt;p&gt;$G\in \mathbb{R}^{d\times d}$, diagonal element $i,i$ is the sum of the squares of the gradient w.r.t $\theta_i$, up to time step $t$.&lt;/p&gt;
+
+&lt;h2 id=&quot;adam-adaptive-momentum-estimation&quot;&gt;(Adam) Adaptive Momentum Estimation&lt;/h2&gt;
+
+&lt;p&gt;Adagrad+Momentum.&lt;/p&gt;</content><author><name></name></author><summary type="html">Let’s start from the most often seen ones. Most authors say that if you don’t know which one to use, then use Adagrad.</summary></entry><entry><title type="html">Dive into graph embedding applications</title><link href="http://localhost:4000/yuehan/notes/2019/04/17/Dive-into-graph-embedding-applications.html" rel="alternate" type="text/html" title="Dive into graph embedding applications" /><published>2019-04-17T08:50:45+08:00</published><updated>2019-04-17T08:50:45+08:00</updated><id>http://localhost:4000/yuehan/notes/2019/04/17/Dive-into-graph-embedding-applications</id><content type="html" xml:base="http://localhost:4000/yuehan/notes/2019/04/17/Dive-into-graph-embedding-applications.html">&lt;ol&gt;
   &lt;li&gt;How to efficiently generate random paths in spark?&lt;/li&gt;
   &lt;li&gt;Why gradient explosion happends in spark.mllib.word2vec, but not in gensim.word2vec?&lt;/li&gt;
   &lt;li&gt;How to use map-reduce to compute degrees of each node in a giant graph(that have hundreds of thousands edges.) using spark-sql.&lt;/li&gt;
